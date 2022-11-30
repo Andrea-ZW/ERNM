@@ -18,7 +18,7 @@ This paper compared two classes of statistical models for social networks, expon
 ## Contents of Files in the Respository
 
 - [Data](P0AH_s270_weak_.RData): Raw data we used in our paper.
-- [MCMC Diagnostic Plots](): MCMC diagnositc trace and distribution plots for ERNM and ERGM models fitted in the paper
+- [MCMC Diagnostic Plots](MCMC_Diagnostics): MCMC diagnositc trace and distribution plots for ERNM and ERGM models fitted in the paper
 
 ## Abstract
 
