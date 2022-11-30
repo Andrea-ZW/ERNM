@@ -50,10 +50,9 @@ ergm.tapered(ergm_form,r=2, fixed=TRUE)
 
 ### Goodness of Fit & MCMC Diagnostics
 
-The goodness of fit of fitted models can be checked by generating simulations on target network statistics and compares them to the observed graph statistics:
+The goodness of fit of fitted models can be checked by generating simulations on target network statistics and compares them to the observed graph statistics.
 
-```
+The MCMC Diagnostics for ERGM models use `mcmc.diagnostics()` to create simple diagnostic plots for MCMC sampled statistics produced from a fit. 
 
-```
 
 
