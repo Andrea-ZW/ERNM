@@ -29,16 +29,11 @@ This analysis supports the notion that ERNM are preferred when networks have sto
 
 ### Package Installation
 
-You could install tapered ERGM and tapered ERNM directly from R with devtools:
-
-```
-install.packages("devtools")
-devtools::install_github(, depedencies=T)
-```
+You could install tapered ERGM from R library using `install.packages("ergm.tapered")`and tapered ERNM from the command line `R CMD INSTALL ernm_1.1.tar.gz`.
 
 ### Data Processing
 
-You could preprocess the data to network with desired attributes with following steps:
+The raw data needs to be processed and converted to network. Attributes under interests can be set up with `set.vertex.attribute()` in `netowrk` package in R. The datails of data processing is in [Data_process.r]().
 
 
 ### ERNM and ERGM models
