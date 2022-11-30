@@ -1,10 +1,12 @@
 # Comparison of ERGM to ERNM
 
 ## Table of Contents
+
 - [Introduction](#Introduction)
 - [Abstract](#Abstract)
-- [Contents of Files in the Respository](#Contents of Files in the Respository)
-- [Installtion](#Installation)
+- [Contents of Files in the Respository](#Contents-of-Files-in-the-Respository)
+- [Installation](#Installation)
+
 
 ## Introduction
 
@@ -20,7 +22,7 @@ This analysis supports the notion that ERNM are preferred when networks have sto
 
 ## Contents of Files in the Respository
 
-- [Data](): Raw data we used in our paper.
+- [Data](P0AH_s270_weak_.RData): Raw data we used in our paper.
 - [MCMC Diagnostic Plots](): MCMC diagnositc trace and distribution plots for ERNM and ERGM models fitted in the paper
 
 ## Installation
