@@ -27,12 +27,38 @@ This analysis supports the notion that ERNM are preferred when networks have sto
 
 ## Installation
 
-You could install tapeder ERGM and tapered ERNM directly from R with devtools:
+### Package Installation
+
+You could install tapered ERGM and tapered ERNM directly from R with devtools:
 
 ```
 install.packages("devtools")
 devtools::install_github(, depedencies=T)
 ```
 
+### Data Processing
+
+You could preprocess the data to network with desired attributes with following steps:
+
+
+### ERNM and ERGM models
+
+The suggested models in the paper can be fitted with following codes:
+
+```
+ergm_form <- data ~ edges + esp(0:2) + gwesp(0.5,fixed = T) + gwdegree(0.5,fixed = T)  + nodefactor("c.smoke") + nodematch('c.smoke') 
+ernm_form <- data ~ edges() + esp(0:2) + gwesp(0.5,1) + gwdegree(0.5) + nodeCov("c.smoke") + nodeMatch("c.smoke") | c.smoke
+
+ernm(ernm_form,r=2)
+ergm.tapered(ergm_form,r=2, fixed=TRUE)
+```
+
+### Goodness of Fit & MCMC Diagnostics
+
+The goodness of fit of fitted models can be checked by generating simulations on target network statistics and compares them to the observed graph statistics:
+
+```
+
+```
 
 
