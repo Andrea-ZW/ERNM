@@ -1,3 +1,5 @@
+<img src="Figures/ERNM-ERGM_hl.png" align="left" width="250" height="250" style="padding:30px;" alt="network"/>
+
 # Comparison of ERGM to ERNM
 
 ## Table of Contents
