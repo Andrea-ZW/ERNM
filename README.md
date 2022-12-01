@@ -17,7 +17,7 @@ This paper compared two classes of statistical models for social networks, expon
 
 ## Contents of Files in the Respository
 
-- [Data](P0AH_s270_weak_.RData): Raw data we used in our paper.
+- [Data](network.RData): Raw data we used in our paper.
 - [MCMC Diagnostic Plots](https://github.com/Andrea-ZW/ERNM/tree/main/MCMC%20Diagnostics): MCMC diagnositc trace and distribution plots for ERNM and ERGM models fitted in the paper
 
 ## Abstract
@@ -33,7 +33,7 @@ You could install tapered ERGM from R library using `install.packages("ergm.tape
 
 ### Data Processing
 
-The raw data needs to be processed and converted to network. Attributes under interests can be set up with `set.vertex.attribute()` in `netowrk` package in R. The datails of data processing is in [Data_process.r]().
+The data shown in respository is already cleaned and formed as network object. It is a list of length 4 with each element being the network of grade 9-12.
 
 
 ### ERNM and ERGM models
