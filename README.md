@@ -43,8 +43,10 @@ The data shown in respository is already cleaned and formed as network object. I
 The suggested models in the paper can be fitted with following codes:
 
 ```
-ergm_form <- data ~ edges + esp(0:2) + gwesp(0.5,fixed = T) + gwdegree(0.5,fixed = T)  + nodefactor("c.smoke") + nodematch('c.smoke') 
-ernm_form <- data ~ edges() + esp(0:2) + gwesp(0.5,1) + gwdegree(0.5) + nodeCov("c.smoke") + nodeMatch("c.smoke") | c.smoke
+network_g9 <- network_addhealth_grade[[1]]
+
+ergm_form <- network_g9 ~ edges + esp(0:2) + gwesp(0.5,fixed = T) + gwdegree(0.5,fixed = T)  + nodefactor("c.smoke") + nodematch('c.smoke') 
+ernm_form <- network_g9 ~ edges() + esp(0:2) + gwesp(0.5,1) + gwdegree(0.5) + nodeCov("c.smoke") + nodeMatch("c.smoke") | c.smoke
 
 ernm(ernm_form,r=2)
 ergm.tapered(ergm_form,r=2, fixed=TRUE)
