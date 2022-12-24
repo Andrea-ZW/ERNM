@@ -1,6 +1,6 @@
 <img src="Figures/ERNM-ERGM_hl.png" align="left" width="250" height="250" style="padding:30px;" alt="network"/>
 
-# Comparison of ERGM to ERNM
+# Understanding Complex Networks with Exponential-family Random Network Models
 
 ## Table of Contents
 
@@ -15,7 +15,7 @@
 This paper compared two classes of statistical models for social networks, exponential-family random graph models (ERGMs) and exponential-family random network models (ERNMs), so as to cope with the endogeneous nature of networks and nodal variables.
 
 - For a further details of the paper, visit the
-[Comparison of ERGM to ERNM](https://drive.google.com/file/d/1mPHLsypGwfLOGTBUS6GuZrEpxGjES_kV/view?usp=sharing)
+[Understanding Complex Networks with Exponential-family Random Network Models](https://drive.google.com/file/d/1TSJbSHiQIXXqTF3h76jfqAeTsAfxH8hQ/view?usp=sharing)
 
 ## Contents of Files in the Respository
 
