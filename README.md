@@ -35,7 +35,7 @@ You could install tapered ERGM from R library using `install.packages("ergm.tape
 
 ### Data Processing
 
-The data shown in respository is already cleaned and formed as network object. It is a list of length 4 with each element being the network of grade 9-12.
+The [data](network.RData) shown in respository is already cleaned and formed as network object. It is a list of length 4 with each element being the network of grade 9-12.
 
 
 ### ERNM and ERGM models
