@@ -106,7 +106,7 @@ ergm.sim_stats <- do.call(rbind,lapply(ergm.sim,function(x) summary(x ~ edges + 
 ernm.sim_stats <- do.call(rbind,lapply(ernm.netList,function(x) calculateStatistics(x ~ edges() + esp(0:2) + gwesp(0.5,1) + gwdegree(0.5) + nodeCov("c.smoke") + nodeMatch("c.smoke"))))
 ```
 
-The MCMC Diagnostics for ERGM models use `mcmc.diagnostics()` to create simple diagnostic plots for MCMC sampled statistics produced from a fit, including the trace plots and density plots of Markov chains. For ERNM, the MCMC Diagnostics can be generated with the code:
+The MCMC Diagnostics for ERGM models use `mcmc.diagnostics()` to create simple diagnostic plots for MCMC sampled statistics produced from a fit, including the trace plots and density plots of Markov chains. For ERNM, the following code regenerates the MCMC Diagnostics in the paper:
 
 ```
 par(mfrow=c(1,2))
