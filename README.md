@@ -88,7 +88,7 @@ To generate simultions from fitted ERNM, use the code:
 ```
 ernm_sampler <- ernm::createCppSampler(ernm_form,theta=ernm_fit$theta)
 ernm_sampler$getModel()$setThetas(ernm_fit$theta)
-ernm.netList <- ernm_sampler$generateSample(50000,10000,nsim)
+ernm.netList <- ernm_sampler$generateSample(50000,10000,nsim) # burnin=50000, interval=10000
 # If use the ERNM package in the paper, replace the last step with
 ernm.netList <- ernm_sampler$generateSample(50000,10000,nsim,ernm_fit$tapering.centers,ernm_fit$tau)
 ```
