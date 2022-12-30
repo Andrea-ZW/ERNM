@@ -77,7 +77,7 @@ ergm_fit <- ergm.tapered(ergm_form,r=2, fixed=TRUE)
 
 ### Goodness of Fit & MCMC Diagnostics
 
-The goodness of fit of fitted models can be checked by generating simulations on target network statistics and compares them to the observed graph statistics. To generate simultions from fitted ERGM and ERNM, use the code:
+The goodness of fit of fitted models can be checked by generating simulations on target network statistics and compares them to the observed graph statistics. To generate simultions from fitted ERGM, use the code:
 
 ```
 nsim <- 1000
@@ -85,6 +85,10 @@ nsim <- 1000
 # Generate simulations from ERGM
 ergm.sim <- simulate(ergm_fit,nsim) 
 
+```
+To generate simultions from fitted ERNM, use the code:
+
+```
 # Generate simulations from ERMM (ERNM package installed from "fellstat/ernm")
 ernm_sampler <- ernm::createCppSampler(ernm_form,theta=ernm_fit$theta)
 ernm_sampler$getModel()$setThetas(ernm_fit$theta)
@@ -94,7 +98,8 @@ ernm.netList <- ernm_sampler$generateSample(50000,10000,nsim)
 ernm.netList <- ernm_sampler$generateSample(50000,10000,nsim,ernm_5$tapering.centers,ernm_fit$tau)
 ```
 
-To calculate the statistics of the observed network and the simulated networks, use the code:
+To calculate the statistics of the observed network and the simulated networks from ERGM, use the `summary()` function in `ERGM` package:
+
 ```
 # Observed Networks
 obs.stats <- summary(network_g9 ~ edges + esp(0:2) + gwesp(0.5,fixed = T) + gwdegree(0.5,fixed = T)  + nodefactor("c.smoke") + nodematch('c.smoke'))
@@ -102,12 +107,18 @@ obs.stats <- summary(network_g9 ~ edges + esp(0:2) + gwesp(0.5,fixed = T) + gwde
 # ERGM
 ergm.sim_stats <- do.call(rbind,lapply(ergm.sim,function(x) summary(x ~ edges + esp(0:2) + gwesp(0.5,fixed = T) + gwdegree(0.5,fixed = T)  + nodefactor("c.smoke") + nodematch('c.smoke'))))
 
+```
+
+ERNM uses the function `calculateStatistics()` to calculate model statistics, and the following code regenerates the model statistics of simulated networks from the fitted ERNM:
+
+```
 # ERNM
 ernm.sim_stats <- do.call(rbind,lapply(ernm.netList,function(x) calculateStatistics(x ~ edges() + esp(0:2) + gwesp(0.5,1) + gwdegree(0.5) + nodeCov("c.smoke") + nodeMatch("c.smoke"))))
 ```
-The MCMC Diagnostics for ERGM models use `mcmc.diagnostics()` to create simple diagnostic plots for MCMC sampled statistics produced from a fit. For ERNM, the MCMC Diagnostics can be generated with the code:
-```
 
+The MCMC Diagnostics for ERGM models use `mcmc.diagnostics()` to create simple diagnostic plots for MCMC sampled statistics produced from a fit. For ERNM, the MCMC Diagnostics can be generated with the code:
+
+```
 par(mfrow=c(1,2))
 name <- c("Edges","ESP_0","ESP_1","ESP_2","GWESP","GWDegree","Differential\n homophilous\n smoker","Homophily_\n smoker")
 for (m in 1:length(name)) {
